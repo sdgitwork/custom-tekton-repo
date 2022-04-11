@@ -12,7 +12,7 @@ Um es externen Services zu ermögliche, die **Trigger** zu erreichen (bzw. Webho
 
 Wenn ein Trigger ausgelöst wird, wird folgender Prozess gestartet:
 
-Event -> EventListenerPod (triggerBinding -> (Params) -> triggerTemplate) -> CREATE RESOURCE!.
+Event -> EventListenerPod (triggerBinding -> (Params) -> triggerTemplate) -> CREATE RESOURCE!
 
 Es kommt zu einer definierten Änderung in einem Repository (wie bspw. ein Push oder Pull-**Event**). Der **Eventlistener**, welcher auf eingehende HTTP Requests mit JSON Payload wartet, registriert diesen Event, woraufhin der Trigger ausgelöst wird. In der yaml Definition des EventListeners wird dann das Triggerbinding mit dem Triggertemplate verbunden.
 
