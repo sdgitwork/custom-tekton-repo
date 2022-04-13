@@ -9,6 +9,22 @@ Ein Task wird in einem YAML File definiert (apiVersion, kind, metadata und spec)
 
 **Steps** sind das kleinste Element in Tekton und müssen für die Erstellng einesTaskszwingend angegeben werden. Steps werden in dem YAML File des jew. Tasks in derspecSection definiert. Jeder step wird durch einen Container ausgeführt, weshalb dieAngabedes Images zwingend ist. 
 
+apiVersion: tekton.dev/v1beta1
+
+kind: Task
+
+metadata: 
+  name: example-task
+
+spec:
+
+steps: 
+
+  - name: step-one
+  
+    image: alipine
+
+
 ## **Pipeline**
 
 # **Tekton Triggers**
