@@ -1,12 +1,15 @@
 # **Tekton**
 Cloud native CI/CD, realisiert durch CRD's. Tekton hat unterschiedeliche Bestandteile, aus denen Build Pipelines zusammengesetzt sind.
-**Tasks** sind einzelne Build Blöcke, aus denen die Pipeline zusammengesetzt ist. EinTask sollte möglichst eine Aufgabe (Repo klonen, Tests laufen lassen) haben undmöglichst wiederverwendbar geschrieben sein, sodass man ihn in mehrfach einsetzen kann.
-Jeder einzelne Task wird in einem Pod ausgeführt, der solange läuft, bis alle Stepserfolgreich abgearbeitet wurden oder eine Step failt.
+
+## **Tasks** 
+sind einzelne Build Blöcke, aus denen die Pipeline zusammengesetzt ist. EinTask sollte möglichst eine Aufgabe (Repo klonen, Tests laufen lassen) haben undmöglichst wiederverwendbar geschrieben sein, sodass man ihn in mehrfach einsetzen kann.
+
+Jeder einzelne Task wird in einem **Pod** ausgeführt, der solange läuft, bis alle Stepserfolgreich abgearbeitet wurden oder eine Step failt.
 Ein Task wird in einem YAML File definiert (apiVersion, kind, metadata und spec). Inder spec Section werden die Elemente definiert, die man zum ausführen der Aufgabe desTasks benötigt (parameters, workspaces, results oder steps).
 
 **Steps** sind das kleinste Element in Tekton und müssen für die Erstellng einesTaskszwingend angegeben werden. Steps werden in dem YAML File des jew. Tasks in derspecSection definiert. Jeder step wird durch einen Container ausgeführt, weshalb dieAngabedes Images zwingend ist. 
 
-  **Pipeline**
+## **Pipeline**
 
 # **Tekton Triggers**
 Um **Tekton-Pipelines automatisiert** ablaufen zu lassen, sind zwei Erweiterungen (**C**ustom**R**esource**D**efinitions) erforderlich; Tekton **Triggers** (kubectl apply -f https://storage.googleapis.com/tekton-releases/triggers/latest/release.yaml) und Tekton **Interceptors** (kubectl apply -f https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors.yaml). 
