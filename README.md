@@ -21,7 +21,7 @@ Es gibt verschiedene Methoden; man kann bspw. zwischen mehreren steps in einem T
 **Workspaces**
 Workspaces sind Volumes, die von Steps eines Tasks, bzw. von Tasks einer Pipeline genutzt werden, um Daten miteinander zu teilen. Der Workspace benötigt einen Volume, wo die zu teilenden Daten gespeichert werden sollen. Hierfür gibt es verschiedene Typen von Volumes, sogenannte VolumeSources:
 - **emptyDir:** Hierbei handelt es sich um ein leeres Verzeichnis, das an einen TaskRun angehängt wird. Es eignet sich also nur dazu, um Daten zwischen Steps in einem Task zi teilen und nicht um Informationen zwischen mehreren Tasks in einer Pipeline zu teilen. 
-- **ConfigMap:** Man kann hierbei die Konfigurationen speichern, die gespeicherten Daten sind nur als lesender Zugriff verfügbar...
+- **ConfigMap:** Man kann hierbei die Konfigurationen speichern, die gespeicherten Daten sind nur als lesender Zugriff verfügbar.
 - **Secret:** Ähnlich wie ConfigMap nur im Lesemodus verfügbar.
 - **PV & PVC:** Das ist der gebräucliche Weg, um Daten zwischen mehreren Tasks zu teilen. Wenn man ein volumeClaimTemplate erstellt, wird ein PVC automatisch erstellt, wenn ein Run beginnt und auch mit dem Ende des Runs automatisch wieder gelöscht. Wenn ein PVC von mehreren Ressourcen genutzt wird, benötigt man evtl noch einen finally Task, der den speicher des PVC's wieder aufräumt.
   
