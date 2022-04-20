@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/hello', function (req, res) {
-  res.send('<h1 style="text-align:center;">not on main branch again<h1>\n');
+  res.send('<h1 style="text-align:center;">/hello<h1>\n');
   
 });
 
