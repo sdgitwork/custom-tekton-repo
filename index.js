@@ -3,7 +3,7 @@ var app = express();
 
 app.get('/', function (req, res) {
   res.send('<h1 style="text-align:center;">tekton test<h1>\n');
-
+  console.log(req.body)
 });
 
 app.get('/test', function (req, res) {
@@ -11,10 +11,6 @@ app.get('/test', function (req, res) {
   
 });
 
-app.get('/oauth2/callback', function (req, res) {
-  res.send('<h1 style="text-align:center;">sign in<h1>\n');
-  
-});
 
 
 var server = app.listen(3000, function () {
