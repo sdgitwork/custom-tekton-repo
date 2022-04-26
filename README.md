@@ -32,6 +32,8 @@ Mit **Triggern** ist es möglich, eingehende Webhooks im Cluster entgegen zu neh
 
 **Interceptors** werden dazu benutzt, um eingehende Webhooks zu filtern und zu validieren (Bsp. -> kommt der Webhook, wie erwartet bspw. wie erwartet von GitHub/-Lab...). Zu den Standard Interceptors zählen GitHub, Gitlab, Bitbucket, and Common Expression Language (CEL).
 
+Die beiden Komponenten Triggerbinding und -template (Erläuterung siehe nächster Absatz) bilden mit dem Interceptor die 3 Komponenten für einen Trigger.
+
 ## **Komponenten und Ablauf**
 Da Tekton Kubernetes Objekte instanziiert, wird ein **Serviceaccount mit RBAC** benötigt (siehe bspw. kubectl apply -f https://raw.githubusercontent.com/tektoncd/triggers/main/examples/rbac.yaml).  
 
