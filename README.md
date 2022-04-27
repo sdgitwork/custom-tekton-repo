@@ -57,6 +57,7 @@ Durch das CMD Tool von Tekton können Operationen im Zusammenhang mit Tekton ein
 - tkn <task/pipeline> start <pipeline-/task-name> --shwolog // Startet definiertes Objekt und zeigt logs zur Laufzeit an
 - tkn <task/pipeline> ls // Auflistung aller spezifizierten Objekte
 - tkn <pipelinerun/taskrun> cancel <name> // erzwungenes Abbrechen eines Runs
+- tkn hub install task <task-name> // Vordefinierten Task aus tekton hub installieren
 
 # **okta für Authentifizierung**
 Okta benutzt als Grundlage das O(pen)Auth(orization) 2.0 Protocol und O(pen)IDC(onnect).
