@@ -8,4 +8,4 @@ RUN npm install
 COPY . /usr/src/app
 # start
 CMD ["node", "index.js"]
-EXPOSE 5000
+EXPOSE 3000
