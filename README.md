@@ -32,6 +32,8 @@ Mit **Triggern** ist es möglich, eingehende Webhooks im Cluster entgegen zu neh
 
 **Interceptors** werden dazu benutzt, um eingehende Webhooks zu filtern und zu validieren (Bsp. -> kommt der Webhook, wie erwartet bspw. wie erwartet von GitHub/-Lab...). Zu den Standard Interceptors zählen GitHub, Gitlab, Bitbucket, and Common Expression Language (CEL).
 
+Die beiden Komponenten Triggerbinding und -template (Erläuterung siehe nächster Absatz) bilden mit dem Interceptor die 3 Komponenten für einen Trigger.
+
 ## **Komponenten und Ablauf**
 Da Tekton Kubernetes Objekte instanziiert, wird ein **Serviceaccount mit RBAC** benötigt (siehe bspw. kubectl apply -f https://raw.githubusercontent.com/tektoncd/triggers/main/examples/rbac.yaml).  
 
@@ -55,7 +57,14 @@ Durch das CMD Tool von Tekton können Operationen im Zusammenhang mit Tekton ein
 - tkn <task/pipeline> start <pipeline-/task-name> --shwolog // Startet definiertes Objekt und zeigt logs zur Laufzeit an
 - tkn <task/pipeline> ls // Auflistung aller spezifizierten Objekte
 - tkn <pipelinerun/taskrun> cancel <name> // erzwungenes Abbrechen eines Runs
+- tkn hub install task <task-name> // Vordefinierten Task aus tekton hub installieren
 
+# **okta für Authentifizierung**
+Okta benutzt als Grundlage das O(pen)Auth(orization) 2.0 Protocol und O(pen)IDC(onnect).
+- OAuth 2.0 hilft sorgt dafür, den Zugriff auf Ressourcen zu beschränken und genauer zu kontrollieren
+- Mit OICD als Erweiterung von OAuth 2.0 kann man des Managen der Passwörter nach außen verlagern und hat die Möglichkeit für ein single Sign On 
+  - okta ist ein Dienst, der beides liefert
+  
 # **TEKTON Multibranching**
 ## *default*
 In der PipelineResource für GitHub wird angegeben, welchen branch man nutzen will (revision). Gibt man diesen Wert nicht an, wird der default branch des entsprechenden Repositories für den Build verwendet.
