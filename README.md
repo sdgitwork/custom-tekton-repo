@@ -64,3 +64,7 @@ Okta benutzt als Grundlage das O(pen)Auth(orization) 2.0 Protocol und O(pen)IDC(
 - OAuth 2.0 hilft sorgt dafür, den Zugriff auf Ressourcen zu beschränken und genauer zu kontrollieren
 - Mit OICD als Erweiterung von OAuth 2.0 kann man des Managen der Passwörter nach außen verlagern und hat die Möglichkeit für ein single Sign On 
   - okta ist ein Dienst, der beides liefert
+  
+# **TEKTON Multibranching**
+## *default*
+In der PipelineResource für GitHub wird angegeben, welchen branch man nutzen will (revision). Gibt man diesen Wert nicht an, wird der default branch des entsprechenden Repositories für den Build verwendet.
