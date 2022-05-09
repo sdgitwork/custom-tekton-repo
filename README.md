@@ -55,3 +55,7 @@ Durch das CMD Tool von Tekton können Operationen im Zusammenhang mit Tekton ein
 - tkn <task/pipeline> start <pipeline-/task-name> --shwolog // Startet definiertes Objekt und zeigt logs zur Laufzeit an
 - tkn <task/pipeline> ls // Auflistung aller spezifizierten Objekte
 - tkn <pipelinerun/taskrun> cancel <name> // erzwungenes Abbrechen eines Runs
+
+# **TEKTON Multibranching**
+## *default*
+In der PipelineResource für GitHub wird angegeben, welchen branch man nutzen will (revision). 
