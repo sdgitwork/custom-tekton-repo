@@ -58,4 +58,4 @@ Durch das CMD Tool von Tekton können Operationen im Zusammenhang mit Tekton ein
 
 # **TEKTON Multibranching**
 ## *default*
-In der PipelineResource für GitHub wird angegeben, welchen branch man nutzen will (revision). 
+In der PipelineResource für GitHub wird angegeben, welchen branch man nutzen will (revision). Gibt man diesen Wert nicht an, wird per default der main branch 
